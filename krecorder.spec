@@ -10,6 +10,16 @@ License:	GPLv3
 Group:		Applications/Productivity
 BuildRequires:	cmake
 BuildRequires:	ninja
+BuildRequires:	cmake(ECM)
+BuildRequires:	cmake(Qt5Core)
+BuildRequires:	cmake(Qt5Gui)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5Qml)
+BuildRequires:	cmake(Qt5QuickControls2)
+BuildRequires:	cmake(Qt5Multimedia)
+BuildRequires:	cmake(KF5Kirigami2)
+BuildRequires:	cmake(KF5I18n)
+BuildRequires:	cmake(KF5Config)
 
 %description
 Audio recorder for Plasma Mobile
