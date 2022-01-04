@@ -2,7 +2,7 @@
 %define commit f5f31989e23559cdb5739cea8af8c82f74b67254
 
 Name:		krecorder
-Version:	21.08
+Version:	21.12
 Release:	%{?snapshot:1.%{snapshot}.}1
 Summary:	Video player for Plasma Mobile
 %if %{defined snapshot}
