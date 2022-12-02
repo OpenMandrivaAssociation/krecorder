@@ -2,7 +2,7 @@
 %define commit f5f31989e23559cdb5739cea8af8c82f74b67254
 
 Name:		krecorder
-Version:	22.09
+Version:	22.11
 Release:	%{?snapshot:1.%{snapshot}.}1
 Summary:	Video player for Plasma Mobile
 %if %{defined snapshot}
@@ -45,4 +45,4 @@ Audio recorder for Plasma Mobile
 %{_bindir}/krecorder
 %{_datadir}/applications/org.kde.krecorder.desktop
 %{_datadir}/metainfo/org.kde.krecorder.appdata.xml
-%{_datadir}/icons/hicolor/scalable/apps/krecorder.svg
+%{_datadir}/icons/hicolor/scalable/apps/org.kde.krecorder.svg
