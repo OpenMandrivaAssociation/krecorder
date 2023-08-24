@@ -1,14 +1,16 @@
-#define snapshot 20200916
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+
+#define git 20200916
 %define commit f5f31989e23559cdb5739cea8af8c82f74b67254
 
 Name:		krecorder
-Version:	22.11
-Release:	%{?snapshot:1.%{snapshot}.}1
+Version:	23.08.0
+Release:	%{?git:0.%{git}.}1
 Summary:	Video player for Plasma Mobile
-%if %{defined snapshot}
+%if %{defined git}
 Source0:	https://invent.kde.org/plasma-mobile/krecorder/-/archive/master/krecorder-master.tar.bz2
 %else
-Source0:	https://download.kde.org/stable/plasma-mobile/%{version}/%{name}-%{version}.tar.xz
+Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 %endif
 License:	GPLv3
 Group:		Applications/Productivity
@@ -33,7 +35,7 @@ BuildRequires:	cmake(KF5KirigamiAddons)
 Audio recorder for Plasma Mobile
 
 %prep
-%autosetup -p1 %{?snapshot:-n %{name}-master}
+%autosetup -p1 %{?git:-n %{name}-master}
 %cmake_kde5 -G Ninja
 
 %build
