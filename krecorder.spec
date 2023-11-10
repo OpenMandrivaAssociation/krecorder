@@ -4,7 +4,7 @@
 %define commit f5f31989e23559cdb5739cea8af8c82f74b67254
 
 Name:		krecorder
-Version:	23.08.2
+Version:	23.08.3
 Release:	%{?git:0.%{git}.}1
 Summary:	Video player for Plasma Mobile
 %if %{defined git}
