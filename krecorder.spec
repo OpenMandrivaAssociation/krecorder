@@ -5,7 +5,7 @@
 
 Name:		krecorder
 Version:	23.08.4
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 Summary:	Video player for Plasma Mobile
 %if %{defined git}
 Source0:	https://invent.kde.org/plasma-mobile/krecorder/-/archive/master/krecorder-master.tar.bz2
