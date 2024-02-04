@@ -4,8 +4,8 @@
 %define commit f6f31989e23669cdb6739cea8af8c82f74b67264
 
 Name:		plasma6-krecorder
-Version:	24.01.90
-Release:	%{?git:0.%{git}.}2
+Version:	24.01.95
+Release:	%{?git:0.%{git}.}1
 Summary:	Video player for Plasma Mobile
 %if %{defined git}
 Source0:	https://invent.kde.org/plasma-mobile/krecorder/-/archive/master/krecorder-master.tar.bz2
