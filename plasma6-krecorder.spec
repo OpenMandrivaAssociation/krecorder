@@ -1,14 +1,15 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
-#define git 20200916
-%define commit f6f31989e23669cdb6739cea8af8c82f74b67264
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		plasma6-krecorder
-Version:	24.01.95
+Version:	24.01.96
 Release:	%{?git:0.%{git}.}1
 Summary:	Video player for Plasma Mobile
 %if %{defined git}
-Source0:	https://invent.kde.org/plasma-mobile/krecorder/-/archive/master/krecorder-master.tar.bz2
+Source0:	https://invent.kde.org/utilities/krecorder/-/archive/%{gitbranch}/krecorder-%{gitbranchd}.tar.bz2
 %else
 Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/krecorder-%{version}.tar.xz
 %endif
@@ -35,7 +36,7 @@ BuildRequires:	cmake(KF6KirigamiAddons)
 Audio recorder for Plasma Mobile
 
 %prep
-%autosetup -p1 -n krecorder-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n krecorder-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja -G Ninja
