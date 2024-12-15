@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		plasma6-krecorder
-Version:	24.08.3
+Version:	24.12.0
 Release:	%{?git:0.%{git}.}1
 Summary:	Video player for Plasma Mobile
 %if %{defined git}
