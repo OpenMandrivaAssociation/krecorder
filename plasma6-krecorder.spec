@@ -5,8 +5,8 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		plasma6-krecorder
-Version:	24.12.3
-Release:	%{?git:0.%{git}.}2
+Version:	25.04.0
+Release:	%{?git:0.%{git}.}1
 Summary:	Audio recorder for Plasma Mobile
 %if %{defined git}
 Source0:	https://invent.kde.org/utilities/krecorder/-/archive/%{gitbranch}/krecorder-%{gitbranchd}.tar.bz2
