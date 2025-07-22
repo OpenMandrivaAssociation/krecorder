@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		krecorder
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 Summary:	Audio recorder for Plasma Mobile
 %if %{defined git}
@@ -15,8 +15,6 @@ Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kreco
 %endif
 License:	GPLv3
 Group:		Applications/Productivity
-BuildRequires:	cmake
-BuildRequires:	ninja
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(Qt6Core)
 BuildRequires:	cmake(Qt6Gui)
@@ -32,23 +30,15 @@ BuildRequires:	cmake(KF6CoreAddons)
 BuildRequires:	cmake(KF6WindowSystem)
 BuildRequires:	cmake(KF6KirigamiAddons)
 
+%rename plasma6-krecorder
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 Audio recorder for Plasma Mobile
 
-%prep
-%autosetup -p1 -n krecorder-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja -G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-%find_lang krecorder
-
-%files -f krecorder.lang
+%files -f %{name}.lang
 %{_bindir}/krecorder
 %{_datadir}/applications/org.kde.krecorder.desktop
 %{_datadir}/metainfo/org.kde.krecorder.appdata.xml
