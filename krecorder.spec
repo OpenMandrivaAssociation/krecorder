@@ -5,7 +5,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name:		krecorder
-Version:	25.12.0
+Version:	25.12.1
 Release:	%{?git:0.%{git}.}1
 Summary:	Audio recorder for Plasma Mobile
 %if %{defined git}
